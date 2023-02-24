@@ -1,0 +1,58 @@
+{% extends 'app_menu/base.html' %}
+
+
+<!--Bloque de la Pestaña de la Página-->
+{% block title %}
+Contacto...
+{% endblock title %}
+
+
+
+
+<!-- Bloque del titulo del menu-->  
+{% block title_menu %}
+Comunicate con nosotros
+{% endblock title_menu %}
+
+
+
+<!--Bloque de Contenido de la página-->
+{% block content %}
+
+
+
+
+<style>
+
+    form{
+        color: rgba(255, 0, 0, 0.878);
+      
+        border-color: black;
+    }
+
+
+</style>
+
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-4"></div>
+        
+        <div class="col-sm-6 col-md-4">
+
+            <h5> Si tenés alguna consulta o queres realizar una reserva envianos tus datos que nos contactamos con vos!</h5><br>
+
+            <form action="" method = "POST"> 
+
+                {% csrf_token %}
+
+                {{contacto.as_p}}
+
+                <input type="submit" class="btn btn-danger mt-1" value="Enviar"><br>
+
+            </form>
+
+        </div>
+</div>
+
+{% endblock content %}

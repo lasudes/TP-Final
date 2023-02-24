@@ -1,0 +1,42 @@
+{% extends 'app_menu/base.html' %}
+
+{% block title %}
+Iniciar Sesion
+{% endblock title %}
+
+
+{% block title_menu %}
+Inicio de Sesion
+{% endblock title_menu %}
+
+
+{% block content %}  
+
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-5"></div>
+
+        <div class="col-sm-6 col-md-4">
+
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+        
+            {{form.as_p}}
+
+
+
+        <input type="submit" class=" text-center btn btn-danger mt-1" value="Iniciar Sesion"><br>
+
+         
+        
+
+        </form><br><br>
+
+
+    </div>
+
+</div>
+{% endblock content %}

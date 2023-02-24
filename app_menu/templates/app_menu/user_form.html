@@ -1,0 +1,25 @@
+{% extends 'app_menu/base.html' %}
+
+{% block content %}
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-5"></div>
+        
+        <div class="col-sm-6 col-md-3">
+
+<a href="{% url 'user-detail' user.id %}"class="btn btn-danger mt-1">Volver a Perfil</a><br><br>
+
+<form method="post">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" class="btn btn-danger mt-1" value="Guardar">
+    
+</form>
+
+        </div>
+</div>
+
+{% endblock content %}

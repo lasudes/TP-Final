@@ -1,0 +1,54 @@
+{% extends 'app_menu/base.html' %}
+
+
+
+
+<!--Bloque de la Pestaña de la Página-->
+{% block title %}
+Platos
+{% endblock title %}
+
+
+
+<!-- Bloque del titulo del menu-->  
+{% block title_menu %}
+Lista de Platos
+{% endblock title_menu %}
+
+
+
+<!--Bloque de Contenido de la página-->
+{% block content %}
+
+<div class="row mt-4">
+
+    <div class="col-sm-6 col-md-5"></div>
+        
+        <div class="col-sm-6 col-md-3">
+
+    
+    
+    <ul>
+        {% for producto in productos %}
+
+        <li>
+            <p> {{producto.nombre}} ({{producto.descripcion}}) --> ${{producto.precio}}</p>
+        
+            <div style="text-align:left;">
+        
+                <img height="225" src="{{ producto.imagen.url }}" /> 
+        
+            </div>
+            <br>
+
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a type="button" href="{% url 'inicio' %}" class="btn btn-danger mt-1" >Volver al inicio</a> 
+    
+        </div>
+        
+</div>
+
+{% endblock content %}

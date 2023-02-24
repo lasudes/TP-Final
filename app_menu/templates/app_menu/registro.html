@@ -1,0 +1,42 @@
+{% extends 'app_menu/base.html' %}
+
+{% block content %}
+<style>
+
+
+form{
+
+    color: rgb(250, 246, 246);
+    font-family: Georgia, Times, 'Times New Roman', serif;
+    background-size: cover;
+    border: 0rem;
+    box-shadow: inset;
+    background-position: 0em;
+    opacity: unset;
+}
+
+</style>
+
+
+
+<div class="row mt-5">
+
+    <div class="col-sm-6 col-md-4"></div>
+    
+        <div class="col-sm-5 col-md-3">
+
+        <form action="" method="POST">
+
+            {% csrf_token %}
+
+            {{form.as_p}}
+
+            <button type="submit" class=" text-center btn btn-danger mt-1"  > Crear Cuenta </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,112 @@
+{% extends 'app_menu/base.html' %}
+
+
+
+<!--Bloque de la Pestaña de la Página-->
+{% block title %}
+Bienvenido..
+{% endblock title %}
+
+
+
+
+<!-- Bloque del titulo del menu-->  
+{% block title_menu %}
+Menú Principal
+{% endblock title_menu %}
+
+
+{% block nav %}
+
+<div class="collapse navbar-collapse">
+    <ul class="navbar-nav  me-auto mb-0 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'menu-login' %}">Empleados</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'menu-registro' %}">Registrarse</a>
+
+
+    </ul>
+
+{% endblock nav %}
+
+
+
+<!--Bloque de Contenido de la página-->
+{% block content %}
+
+<style>
+
+div.galeria{
+    align-items: flex-start;
+    width: 600px;
+    height: 400px;
+    overflow: hidden;
+    margin: 20px 15px;
+    float: left;
+    width: 350px;
+}
+
+
+ div.imagen {
+
+    text-align: center;
+ }
+
+
+
+</style>
+
+<div class="row mt-5">
+
+    <div class="galeria">
+        <div class="foto">
+            <img src="/media/bebida1.jpg" width="350" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'bebida-inicio' %}">Bebidas</a>
+       </div>
+    </div>
+    
+    
+    <div class="galeria">
+        <div class="foto">
+            <img src= "/media/entradas1.jpg" width="350" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'entrada-inicio' %}">Entradas</a>
+        </div>
+    </div>      
+    
+    
+    <div class="galeria">
+        <div class="foto">
+            <img src= "/media/plato1.jpg" width="360" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'plato-inicio' %}">Platos</a>
+        </div>
+    </div>
+    
+    
+    <div class="galeria">
+        <div class="foto">
+            <img src="/media/postre1.jpg" width="350" height="310">
+        </div>
+        <div class="imagen">
+            <a class="btn btn-danger mt-1"  href="{% url 'postre-inicio' %}">Postre</a>
+        </div>
+    </div>
+    </div>
+    
+
+ 
+{% endblock content %}

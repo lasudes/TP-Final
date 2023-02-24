@@ -1,0 +1,54 @@
+{% extends 'app_menu/base.html' %}
+<!-- Esto es solo para probar, después sacalo o cambialo-->
+
+
+
+<!--Bloque de la Pestaña de la Página-->
+{% block title %}
+Producto
+{% endblock title %}
+
+
+
+<!-- Bloque del titulo del menu-->  
+{% block title_menu %}
+Producto
+{% endblock title_menu %}
+
+
+
+<!--Bloque de Contenido de la página-->
+{% block content %}
+
+<div class="row mt-3">
+
+    <div class="col-sm-6 col-md-5"></div>
+
+        <div class="col-sm-6 col-md-2">
+
+
+    <a type="button" href = "{% url 'producto-list' %}" class="btn btn-danger mt-1"  >Lista</a><br><br>
+
+            <form method="post" enctype="multipart/form-data">
+                
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            {% if request.resolver_match.url_name == "producto-update" %}
+
+                <input type="submit" value="Update">
+
+            {% else %}
+
+                <input type="submit" value="Create">
+
+            {% endif %}    
+
+            </form>
+             
+        </div>  
+
+</div>
+
+{% endblock content %}
